@@ -1,9 +1,8 @@
 {
-  "name": "productTS",
+  "name": "productts",
     "version": "0.8.0",
     "description": "Starter server module using TypeScript, Mongoose, and MongoDB",
     "engines": {
-        "node": "6.x",
         "npm": "3.x"
     },
     "license": "MIT",
