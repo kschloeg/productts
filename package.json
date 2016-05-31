@@ -1,5 +1,5 @@
 {
-  "name": "serverTS",
+  "name": "productTS",
     "version": "0.8.0",
     "description": "Starter server module using TypeScript, Mongoose, and MongoDB",
     "engines": {
