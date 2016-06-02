@@ -21,12 +21,10 @@ helpers.setMaxListeners();
 var module_paths = {
     source: {
         files: 'src/**/*.{ts,js}',
-        externalTypings: 'typings/tsd.d.ts',
-        typings: 'src/**/*.d.ts'
+        externalTypings: 'typings/tsd.d.ts'
     },
     built_path: 'build/',
     extras: [
-        'src/*/**/*.d.ts',
         'src/*/**/*.json'
     ],
     clean: [
