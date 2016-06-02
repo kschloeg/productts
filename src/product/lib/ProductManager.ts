@@ -16,8 +16,8 @@ class ProductManager {
         // repository_utils call
     };
 
-    public static findById = (organization_id:string, callback:(err, product:ProductInterface) => void) => {
-        // ProductRepository.findById(organization_id, callback);
+    public static findById = (product_id:string, options:{include_inactive:boolean}, callback:(err, product:ProductInterface) => void) => {
+        // ProductRepository.findById(product_id, callback);
     };
 
     public static update(args:{oldProduct:ProductInterface; newProduct:ProductInterface}, callback:(err, product:ProductInterface) => void) {
