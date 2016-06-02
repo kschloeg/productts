@@ -24,6 +24,7 @@
         "typings/tsd.d.ts"
     ],
     "files": [
+        "src/product/index.d.ts",
         "src/product/lib/ProductManager.ts",
         "src/product/model/Product.ts",
         "src/product/model/ProductDocument.ts",

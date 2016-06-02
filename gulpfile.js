@@ -25,7 +25,8 @@ var module_paths = {
     },
     built_path: 'build/',
     extras: [
-        'src/*/**/*.json'
+        'src/*/*.json',
+        'src/*/*.d.ts'
     ],
     clean: [
         'build'
