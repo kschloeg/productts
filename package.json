@@ -1,6 +1,6 @@
 {
   "name": "productts",
-    "version": "0.8.4",
+    "version": "0.8.5",
     "description": "Starter server module using TypeScript, Mongoose, and MongoDB",
     "engines": {
         "npm": "3.x"
@@ -22,7 +22,7 @@
         "async": "^1.5.2",
         "JSON": "^1.0.0",
         "lodash": "^4.6.1",
-        "mongoose": "^4.4.8"
+        "mongoose": "^4.4.19"
     },
     "devDependencies": {
         "del": "^2.2.0",
