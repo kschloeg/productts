@@ -1,6 +1,5 @@
 import ProductStatus = require('./ProductStatus');
 
-
 interface ProductInterface {
     id?:string;
     name:string;

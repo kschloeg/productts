@@ -1,6 +1,6 @@
 {
   "name": "productts",
-    "version": "0.8.3",
+    "version": "0.8.4",
     "description": "Starter server module using TypeScript, Mongoose, and MongoDB",
     "engines": {
         "npm": "3.x"
@@ -10,8 +10,8 @@
         "type": "git",
         "url": "https://github.com/kschloeg/productts"
     },
-    "main": "build/product/ProductModule",
-    "typings": "build/product",
+    "main": "build/index",
+    "typings": "build/index",
     "scripts": {
         "test": "NODE_ENV=test gulp test",
         "postinstall": "gulp install"

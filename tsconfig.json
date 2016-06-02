@@ -24,7 +24,8 @@
         "typings/tsd.d.ts"
     ],
     "files": [
-        "src/product/index.d.ts",
+        "src/index.d.ts",
+        "src/index.ts",
         "src/product/lib/ProductManager.ts",
         "src/product/model/Product.ts",
         "src/product/model/ProductDocument.ts",
@@ -32,7 +33,6 @@
         "src/product/model/ProductInterface.ts",
         "src/product/model/ProductSchema.ts",
         "src/product/model/ProductStatus.ts",
-        "src/product/ProductModule.ts",
         "typings/tsd.d.ts"
     ],
     "atom": {
