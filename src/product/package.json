@@ -1,9 +1,0 @@
-{
-    "name": "productTS",
-    "version": "1.0.0",
-    "description": "Example TypeScript stack for a generic product",
-    "private": false,
-    "author": "kschloeg@gmail.com",
-    "main": "./ProductModule.js",
-    "typings": "./index.d.ts"
-}
