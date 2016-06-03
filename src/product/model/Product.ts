@@ -13,6 +13,8 @@ class Product implements ProductInterface {
             this.id = product.id;
             this.name = product.name;
             this.price = product.price;
+            this.create_date = product.create_date;
+            this.status = product.status;
         }
     }
 
@@ -20,7 +22,9 @@ class Product implements ProductInterface {
         return {
             id: this.id,
             name: this.name,
-            price: this.price
+            price: this.price,
+            create_date: this.create_date,
+            status: this.status
         };
     }
 }

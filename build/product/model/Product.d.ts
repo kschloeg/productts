@@ -11,6 +11,8 @@ declare class Product implements ProductInterface {
         id: string;
         name: string;
         price: number;
+        create_date: Date;
+        status: ProductStatus;
     };
 }
 export = Product;
