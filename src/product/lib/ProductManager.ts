@@ -36,6 +36,13 @@ class ProductManager {
         });
     }
 
+    public static removeById(product_id: string, callback): void {
+        if (!product_id) return callback(new Error("Missing ID"), null);
+
+        var criteria = { gid: product_id };
+        ProductDocumentManager.remove(criteria, callback);
+    }
+
     public static update(product: ProductInterface, edits: {}, callback: (err, product: ProductInterface) => void): void {
         if (!product || !edits) return callback(null, null);
 
