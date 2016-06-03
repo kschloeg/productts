@@ -24,7 +24,7 @@ class ProductManager {
     public static findById(product_id: string, options: { include_inactive?: boolean }, callback: (err, product: ProductInterface) => void): void {
         if (!product_id) return callback(new Error("Missing ID"), null);
 
-        var criteria = { _id: product_id };
+        var criteria = { gid: product_id };
         if (!options || !options.include_inactive) {
             criteria['status'] = ProductStatus.ACTIVE;
         }
@@ -39,10 +39,11 @@ class ProductManager {
     public static update(product: ProductInterface, edits: {}, callback: (err, product: ProductInterface) => void): void {
         if (!product || !edits) return callback(null, null);
 
+        var mongo_id = product.id;
         var productJson = product.toDocument();
         _.assign(productJson, ProductManager.sanitize(edits));
 
-        ProductDocumentManager.findByIdAndUpdate(product.id, productJson, (updateErr, document: ProductDocument) => {
+        ProductDocumentManager.findByIdAndUpdate(mongo_id, productJson, (updateErr, document: ProductDocument) => {
             if (updateErr) return callback(updateErr, null);
             if (!document) return callback(null, null);
             callback(null, new Product(document));
@@ -52,7 +53,8 @@ class ProductManager {
     private static sanitize(product: {}): {} {
         return _.pick(product,
             'name',
-            'price',
+            'gid',
+            'current_price',
             'create_date',
             'status');
     }

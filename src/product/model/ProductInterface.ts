@@ -1,13 +1,17 @@
 import ProductStatus = require('./ProductStatus');
 
 interface ProductInterface {
-    id?:string;
-    name:string;
-    price:number;
-    create_date:Date;
-    status:ProductStatus;
+    id?: string;
+    gid: number;
+    name: string;
+    current_price: {
+        value: number,
+        currency_code: string
+    };
+    create_date: Date;
+    status: ProductStatus;
 
-    toDocument():Object;
+    toDocument(): Object;
 }
 
 export = ProductInterface;

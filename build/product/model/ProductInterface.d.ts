@@ -1,8 +1,12 @@
 import ProductStatus = require('./ProductStatus');
 interface ProductInterface {
     id?: string;
+    gid: number;
     name: string;
-    price: number;
+    current_price: {
+        value: number;
+        currency_code: string;
+    };
     create_date: Date;
     status: ProductStatus;
     toDocument(): Object;
