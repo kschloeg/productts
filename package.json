@@ -1,6 +1,6 @@
 {
   "name": "productts",
-    "version": "0.8.6",
+    "version": "0.8.7",
     "description": "Starter server module using TypeScript, Mongoose, and MongoDB",
     "engines": {
         "npm": "3.x"

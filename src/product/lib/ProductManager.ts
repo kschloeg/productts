@@ -8,15 +8,11 @@ import ProductDocumentManager = require('../model/ProductDocumentManager');
 import ProductDocument = require('../model/ProductDocument');
 
 class ProductManager {
-    public static DEFAULT_PRODUCT_NAME = "Some Product";
-
     public static create(product: ProductInterface, callback: (err, product: ProductInterface) => void): void {
         if (!product) return callback(new Error("Cannot create null or undefined Object"), null);
 
-        var now: Date = new Date();
-        product.create_date = now;
+        product.create_date = product.create_date || new Date();
         product.status = product.status || ProductStatus.ACTIVE;
-        delete product['_id'];
 
         ProductDocumentManager.create(product, (createErr, document: ProductDocument) => {
             if (createErr) return callback(createErr, null);
@@ -40,14 +36,25 @@ class ProductManager {
         });
     }
 
-    public static update(args: { oldProduct: ProductInterface; newProduct: ProductInterface }, callback: (err, product: ProductInterface) => void): void {
-        args.oldProduct = <ProductInterface>_.merge(args.oldProduct, args.newProduct);
+    public static update(product: ProductInterface, edits: {}, callback: (err, product: ProductInterface) => void): void {
+        if (!product || !edits) return callback(null, null);
 
-        // repository_utils call
+        var productJson = product.toDocument();
+        _.assign(productJson, ProductManager.sanitize(edits));
+
+        ProductDocumentManager.findByIdAndUpdate(product.id, productJson, (updateErr, document: ProductDocument) => {
+            if (updateErr) return callback(updateErr, null);
+            if (!document) return callback(null, null);
+            callback(null, new Product(document));
+        });
     }
 
-    public static helloWorld() {
-        console.log("Hello World");
+    private static sanitize(product: {}): {} {
+        return _.pick(product,
+            'name',
+            'price',
+            'create_date',
+            'status');
     }
 }
 
