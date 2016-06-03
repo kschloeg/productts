@@ -2,17 +2,22 @@ import ProductStatus = require('./ProductStatus');
 import ProductInterface = require('./ProductInterface');
 
 class Product implements ProductInterface {
-    public id:string;
-    public name:string;
-    public price:number;
-    public create_date:Date;
-    public status:ProductStatus;
+    public id: string;
+    public gid: number;
+    public name: string;
+    public current_price: {
+        value: number,
+        currency_code: string
+    };
+    public create_date: Date;
+    public status: ProductStatus;
 
-    constructor(product?:any) {
+    constructor(product?: any) {
         if (product) {
             this.id = product.id;
+            this.gid = product.gid;
             this.name = product.name;
-            this.price = product.price;
+            this.current_price = product.current_price;
             this.create_date = product.create_date;
             this.status = product.status;
         }
@@ -21,8 +26,9 @@ class Product implements ProductInterface {
     public toDocument() {
         return {
             id: this.id,
+            gid: this.gid,
             name: this.name,
-            price: this.price,
+            current_price: this.current_price,
             create_date: this.create_date,
             status: this.status
         };
