@@ -26,6 +26,7 @@
     "files": [
         "src/index.d.ts",
         "src/index.ts",
+        "src/product/lib/ProductManager.spec.ts",
         "src/product/lib/ProductManager.ts",
         "src/product/model/Product.ts",
         "src/product/model/ProductDocument.ts",
