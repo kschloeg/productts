@@ -31,7 +31,7 @@ var module_paths = {
     clean: [
         'build'
     ],
-    test_files: 'src/*/**/*.spec.js'
+    test_files: 'build/*/**/*.spec.js'
 };
 
 // remove all owned directories but only owned files in common directories
